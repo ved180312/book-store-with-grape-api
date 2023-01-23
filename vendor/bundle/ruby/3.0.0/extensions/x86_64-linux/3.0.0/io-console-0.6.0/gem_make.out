@@ -1,0 +1,20 @@
+current directory: /home/dell/grapeapi_project/vendor/bundle/ruby/3.0.0/gems/io-console-0.6.0/ext/io/console
+/home/dell/.rvm/rubies/ruby-3.0.0/bin/ruby -I /home/dell/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20230120-157917-t5v1k8.rb extconf.rb
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... no
+checking for rb_scheduler_timeout()... no
+creating Makefile
+
+current directory: /home/dell/grapeapi_project/vendor/bundle/ruby/3.0.0/gems/io-console-0.6.0/ext/io/console
+make "DESTDIR=" clean
+
+current directory: /home/dell/grapeapi_project/vendor/bundle/ruby/3.0.0/gems/io-console-0.6.0/ext/io/console
+make "DESTDIR="
+compiling console.c
+linking shared-object io/console.so
+
+current directory: /home/dell/grapeapi_project/vendor/bundle/ruby/3.0.0/gems/io-console-0.6.0/ext/io/console
+make "DESTDIR=" install
+/usr/bin/install -m 0755 console.so ./.gem.20230120-157917-ak13a2/io
