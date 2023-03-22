@@ -7,9 +7,7 @@ module BookStore
       format :json
       prefix :api
 
-
       resource :books do
-
         desc 'create a new book'
         params do
           requires :isbn, type: String
@@ -26,13 +24,12 @@ module BookStore
           present books
         end
 
-        desc 'Update a specific book'
+        desc 'Update all books'
         route_param :id do
           put do
             Book.find(params[:id]).update({ isbn:params[:isbn], title:params[:title], stock:params[:stock] })
           end
         end
-
 
         desc 'Return a specific book'
         route_param :id do
@@ -40,6 +37,21 @@ module BookStore
             book = Book.find(params[:id])
             present book
           end
+          get '/flows' do
+            book = Book.find(params[:id])
+            flows = book.flows
+            present flows
+          end
+          params do 
+            requires :previousStock, type: Integer
+            requires :newStock, type: Integer
+          end
+          post '/flows' do
+            book = Book.find(params[:id])
+            flow = book.flows.create!({ previousStock:params[:previousStock], newStock:params[:newStock]})
+            present flow
+          end
+                    
         end
 
         desc 'Delete a specific book'
@@ -54,5 +66,3 @@ module BookStore
     end
   end
 end
-
-
